@@ -38,13 +38,13 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'role:admin']],
     });
 
     //member
-    Route::group(['prefix' => 'member', 'middleware' => ['auth', 'role:member']],
+    Route::group(['prefix' => 'superadmin', 'middleware' => ['auth', 'role:superadmin']],
     function () {
         Route::get('/', function () {
-            return 'halaman member';
+            return 'halaman superadmin';
         });
         
         Route::get('profile', function () {
-            return 'halaman profil member';
+            return 'halaman profil superadmin';
         });
     });

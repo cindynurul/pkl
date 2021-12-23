@@ -19,16 +19,18 @@ class UserSeeder extends Seeder
         //membuat sample role
         
 
+         
+
+         $superadminRole = new Role();
+         $superadminRole->name="superadmin";
+         $superadminRole->display_name = "Super Admin";
+         $superadminRole->save();
+
+
          $adminRole = new Role();
          $adminRole->name="admin";
          $adminRole->display_name = "administrator";
          $adminRole->save();
-
-         $memberRole = new Role();
-         $memberRole->name="member";
-         $memberRole->display_name = "member";
-         $memberRole->save();
-         
          //membuat sample role
 
         $admin =  new User();
@@ -39,12 +41,12 @@ class UserSeeder extends Seeder
         $admin->attachRole($adminRole);
 
         //membuat sample member
-        $member = new User();
-        $member->name = "Member Users";
-        $member->email = "member@gmail.com";
-        $member->password = bcrypt ('rahasia');
-        $member->save();
-        $member->attachRole($memberRole);
+        $superadmin = new User();
+        $superadmin->name = "Super Admin Penentu Wisata";
+        $superadmin->email = "superadmin@gmail.com";
+        $superadmin->password = Hash::make('super12345') ;
+        $superadmin->save();
+        $superadmin->attachRole($superadminRole);
 
 
     }

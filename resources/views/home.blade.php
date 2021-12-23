@@ -18,8 +18,8 @@
                     Role Admin {{ \Laratrust::hasRole('admin')}}
                     @endrole
 
-                    @role('member')
-                    Role Member {{ \Laratrust::hasRole('member')}}
+                    @role('superadmin')
+                    Role superadmin {{ \Laratrust::hasRole('superadmin')}}
                     @endrole
                     {{ __('You are logged in!') }}
                 </div>
