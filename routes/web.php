@@ -35,6 +35,19 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'role:admin']],
         Route::get('profile', function () {
             return 'halaman profil admin';
         });
+
+        Route::get('kategori', function () {
+            return view('admin.kategori.index');
+        });
+
+        // // Route::get('galeri', function () {
+        // //     return view('admin.galeri.index');
+        // // });
+
+        // Route::get('objek_wisata', function () {
+        //     return view('admin.objek_wisata.index');
+        // });
+        
     });
 
     //member
@@ -47,4 +60,6 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'role:admin']],
         Route::get('profile', function () {
             return 'halaman profil superadmin';
         });
+
+     
     });
